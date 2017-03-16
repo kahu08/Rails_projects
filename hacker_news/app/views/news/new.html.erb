@@ -1,4 +1,6 @@
 <% if @news.errors.any? %>
+<!-- in the event of an issue -->
+
    <h3>Oops there were some errors. Please try again:</h3>
    <ul>
      <% @news.errors.full_messages.each do |message| %>
