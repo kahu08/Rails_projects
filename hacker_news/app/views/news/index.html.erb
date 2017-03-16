@@ -1,0 +1,7 @@
+<ul>
+  <% @newss.each do |news|%>
+  <li><%= link_to news.information, news_path(news)%>,<%= news.upvote%></li>
+  <%end%>
+</ul>
+
+<%=link_to "Add new Hacking news", new_news_path%>

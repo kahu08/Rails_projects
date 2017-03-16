@@ -1,0 +1,26 @@
+<h1><%= @news.information %></h1>
+
+  <% if @news.comments.any? %>
+    <h4>Here are the comments for this news:</h4>
+
+    <ul>
+      <% @news.comments.each do |comment| %>
+        <li>
+          <%= comment.description %> |
+          <%= link_to "Edit", edit_news_comment_path(@news, comment) %> |
+          <%= link_to "Delete", news_comment_path(@news, comment),
+                                   :data => {:confirm => "Are you sure?",
+                                                  :method => "delete"} %>
+        </li>
+      <% end %>
+    </ul>
+  <% else %>
+    <p>There are no comments yet!</p>
+  <% end %>
+
+  <p><%= link_to "Add a comment", new_news_comment_path(@news) %></p>
+  <p><%= link_to "Delete news", news_path(@news),
+                          :data => {:confirm => "Are you sure?",
+                                         :method => "delete"} %></p>
+
+  <p><%= link_to "Return to news", news_path %></p>
