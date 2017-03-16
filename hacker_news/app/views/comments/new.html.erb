@@ -1,0 +1,18 @@
+<% if @news.errors.any? %>
+   <h3>Oops there were some errors. Please try again:</h3>
+   <ul>
+     <% @news.errors.full_messages.each do |message| %>
+       <li><%= message %></li>
+     <% end %>
+   </ul>
+ <% end %>
+
+<h2>Comment on <%=@news.information%></h2>
+
+<%=form_for [@news, @comment] do |f|%>
+<%= f.label :user %>
+    <%= f.text_field :user %>
+    <%=f.label :comment%>
+    <%=f.text_field :comment%>
+    <%= f.submit  %>
+  <% end %>

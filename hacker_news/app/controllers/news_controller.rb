@@ -20,7 +20,7 @@ class NewsController < ApplicationController
       else
         render :new
       end
-    end
+  end
 
   def edit
     @news = News.find(params[:id])
@@ -40,6 +40,7 @@ class NewsController < ApplicationController
     @news.destroy
     redirect_to news_index_path
   end
+
 
     private
       def list_params

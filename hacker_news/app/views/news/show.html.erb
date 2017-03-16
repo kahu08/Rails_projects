@@ -6,7 +6,7 @@
     <ul>
       <% @news.comments.each do |comment| %>
         <li>
-          <%= comment.description %> |
+          <%= comment.comment %>|
           <%= link_to "Edit", edit_news_comment_path(@news, comment) %> |
           <%= link_to "Delete", news_comment_path(@news, comment),
                                    :data => {:confirm => "Are you sure?",
