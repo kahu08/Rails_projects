@@ -1,4 +1,5 @@
 class CommentsController < ApplicationController
+  before_filter :authorize, only: [:delete, :edit]
   def new
     @news = News.find(params[:news_id])
     @comment = @news.comments.new
