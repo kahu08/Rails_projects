@@ -1,0 +1,31 @@
+<% if @user.errors.any? %>
+<!-- in the event of an issue -->
+
+   <h3>Oops there were some errors. Please try again:</h3>
+   <ul>
+     <% @user.errors.full_messages.each do |message| %>
+       <li><%= message %></li>
+     <% end %>
+   </ul>
+<% end %>
+
+<%= form_for @user  do |f|%>
+ <div class="form-group">
+   <p>
+     <%=f.label :email%>
+     <%= f.text_field :email%>
+   </p>
+  <p>
+    <%=f.label :password%>
+    <%= f.password_field :password%>
+
+  </p>
+<p>
+  <%=f.label :password_confirmation%>
+  <%= f.password_field :password_confirmation%>
+
+</p>
+
+   <%= f.submit%>
+ </div>
+ <% end %>
