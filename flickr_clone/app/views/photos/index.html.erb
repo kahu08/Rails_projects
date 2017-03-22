@@ -1,0 +1,15 @@
+<h1>Photos#index</h1>
+<p>Find me in app/views/photos/index.html.erb</p>
+
+<ul>
+  <% @photos.each do |photo|%>
+  <li><%= link_to photo.photo, photo_path(photo)%>
+  <%= link_to 'Edit', edit_photo_path(photo)%>
+  <%= link_to 'Delete', photo_path(photo), method: "delete",
+                  :data => {:confirm => "Are you sure?",
+                                 :method => "delete"}%>
+  </li>
+  <%end%>
+</ul>
+
+<p><%= link_to 'Add a photo', new_photo_path%></p>

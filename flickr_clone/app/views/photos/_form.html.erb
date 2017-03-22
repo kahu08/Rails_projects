@@ -1,0 +1,12 @@
+ <%= render "layouts/errors", object: @photo%>
+
+<%= form_for @photo do |f|%>
+
+<%f.label :photo%>
+<%= f.text_field :photo%>
+
+<%f.label :caption%>
+<%= f.text_field :tag%>
+
+<%=f.submit%>
+<%end%>
