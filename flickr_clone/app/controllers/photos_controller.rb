@@ -4,12 +4,13 @@ class PhotosController < ApplicationController
   end
 
   def new
-    @photo = Photo.new
+    #create new photos according to the user signed in
+    @photo = current_user.photos.build
 
   end
 
   def create
-    @photo = Photo.new(list_params)
+    @photo = current_user.photos.build(list_params)
     if @photo.save
       redirect_to photos_path
     else
@@ -43,5 +44,8 @@ class PhotosController < ApplicationController
   private
   def list_params
     params.require(:photo).permit(:photo, :tag)
+  end
+  def current_user
+    
   end
 end
