@@ -1,8 +1,7 @@
 <h1>Messages#index</h1>
 <p>Find me in app/views/messages/index.html.erb</p>
-
 <% if @messages.any? %>
-  <% for @messages.each |message| do %>
+  <% @messages.each do |message| %>
     <%= message.to%>
     <%= message.from%>
     <%= message.body%>
