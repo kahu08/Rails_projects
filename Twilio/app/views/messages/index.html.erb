@@ -2,9 +2,9 @@
 <p>Find me in app/views/messages/index.html.erb</p>
 <% if @messages.any? %>
   <% @messages.each do |message| %>
-    <%= message.to%>
-    <%= message.from%>
-    <%= message.body%>
+    <p><%= message.to%></p>
+    <p><%= message.from%></p>
+    <p><%= message.body%></p>    
   <% end %>
 <% else %>
 <h3>No messages</h3>
